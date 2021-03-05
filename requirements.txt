@@ -1,13 +1,7 @@
-docutils==0.16
 h5py==2.10.0
 Keras-Preprocessing==1.1.0
-MarkupSafe==1.1.1
 oauthlib==3.1.0
-plyer==2.0.0
-PyYAML==5.4.1
-scrapy-fake-useragent==1.4.4
 tensorflow==2.3.0
 virtualenv==20.4.2
-Werkzeug==1.0.1
 numpy==1.16.0
 scipy==1.4.1
