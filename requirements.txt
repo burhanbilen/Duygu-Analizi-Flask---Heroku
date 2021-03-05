@@ -9,7 +9,7 @@ MarkupSafe==1.1.1
 numpy
 pickle-mixin==1.0.2
 PyYAML==5.4.1
-scipy==1.6.1
+scipy
 six==1.15.0
 style==1.1.0
 update==0.0.1
