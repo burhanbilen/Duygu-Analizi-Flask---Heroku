@@ -1,11 +1,8 @@
-h5py
 gunicorn
 click==7.1.2
 Flask==1.1.2
 itsdangerous==1.1.0
 Jinja2==2.11.3
-Keras==2.4.3
-Keras-Preprocessing==1.1.2
 MarkupSafe==1.1.1
 numpy
 pickle-mixin==1.0.2
@@ -15,4 +12,4 @@ six==1.15.0
 style==1.1.0
 update==0.0.1
 Werkzeug==1.0.1
-tensorflow==2.3
+pickle
