@@ -1,12 +1,10 @@
 from flask import Flask, request, render_template
-from keras.models import load_model
-import numpy as np
 import pickle
 
 app = Flask(__name__)
 
-model = load_model("NEWMODEL.h5")
-tokenizer = pickle.load(open("NEWTOKENIZER.pickle", 'rb'))
+model = pickle.load(open("modelim.pickle", 'rb'))
+tokenizer = pickle.load(open("tokenim.pickle", 'rb'))
 
 diller = {0:'Afrikanca',1:'Almanca',2:'Arapça',3:'Arnavutça',4:'Azerbaycan Türkçesi',5:'Belarusça'
          ,6:'Bengalce',7:'Boşnakça',8:'Bulgarca',9:'Burmaca',10:'Danca',11:'Endonezce',12:'Estonyaca'
@@ -18,7 +16,7 @@ diller = {0:'Afrikanca',1:'Almanca',2:'Arapça',3:'Arnavutça',4:'Azerbaycan Tü
          ,47:'İbranice',48:'İngilizce',49:'İspanyolca',50:'İsveççe',51:'İtalyanca',52:'İzlandaca'}
 
 def tahmin_et(metin):
-    tokenized = tokenizer.texts_to_sequences([metin])
+    tokenized = tokenizer.transform([metin])
     try:
         tahmin = model.predict_classes(tokenized)
     except:
