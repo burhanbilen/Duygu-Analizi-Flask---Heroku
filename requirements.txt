@@ -3,5 +3,4 @@ regex
 requests
 gunicorn
 flask
-nltk
 scikit-learn
