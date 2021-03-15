@@ -1,5 +1,4 @@
 from flask import Flask, request, render_template
-from nltk.corpus import stopwords
 from bs4 import BeautifulSoup
 import requests
 import pickle
@@ -65,7 +64,6 @@ def veri(adres):
             x = re.sub(r'^b\s+', '', x)
             x = re.sub(r'\W', ' ', str(x))
             x = x.split()
-            x = [word for word in x if word not in etkisizler]
             x = ' '.join(x)
             yorumlar_temiz.append(x)
         return yorumlar_temiz
