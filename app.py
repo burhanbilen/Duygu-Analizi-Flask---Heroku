@@ -45,7 +45,6 @@ def veri(adres):
             liste_uzunlugu.append(len(liste))
 
         yorumlar_temiz = []
-        etkisizler = list(stopwords.words('Turkish'))
         for text in liste:
             x = str(text)
             x = text.lower()
