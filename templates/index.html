@@ -36,7 +36,7 @@ body {
 
 .gradient-border {
   --borderWidth: 3px;
-  background: #2d2f30;
+  background: #181C28;
   position: relative;
   border-radius: var(--borderWidth);
 }
@@ -48,10 +48,10 @@ body {
   left: calc(-1 * var(--borderWidth));
   height: calc(100% + var(--borderWidth) * 2);
   width: calc(100% + var(--borderWidth) * 2);
-  background: linear-gradient(60deg, #f77b00, #1D1F20, #f77b00, #1D1F20, #f77b00, #1D1F20, #f77b00, #1D1F20);
+  background: linear-gradient(60deg, #f77b00, #f77b00, #f77b00, #181C28, #181C28, #f77b00, #f77b00, #f77b00);
   border-radius: calc(3 * var(--borderWidth));
   z-index: -1;
-  animation: animatedgradient 10s ease alternate infinite;
+  animation: animatedgradient 5s ease alternate infinite;
   background-size: 300% 300%;
 }
 
@@ -146,11 +146,14 @@ body {
 </head>
 
 <body >
+  
   <div class="card-group gradient-border" id="box">
     <div class="container col-md-12">
       <p style="text-align: center;"><img class="btn-outline-dark disabled" src="/static/amazon.png" style="width:75%;"></br></p>
     </div>
-    <form method="POST">
+    <form method="POST"> 
+      <p style="text-align: center;"><a href="https://www.amazon.com.tr/" style="font-size: 50%; text-align: center;">Amazon'a Git <img alt="Amazon'a Git" src="/static/goto.png" width="10" height="15"></a></p>
+
       <tr><input class="form-control rounded btn-light btn btn-light btn-rounded waves-effect btn-sm float-left" type="text" name="text" id="text" placeholder="Ürün bağlantısı yazın..."></tr>
       <tr><button style="margin-top: 5px;" class="form-control btn btn-outline-dark glow-on-hover form-group btn-sm" type="submit" name="tanımla">Analiz</button></tr>
       <tr><p style="color: #f78401; margin-top:20px; text-align: center; font-size: 40%;">{{sonuc}}</br>{{miktar}}</p></tr>
