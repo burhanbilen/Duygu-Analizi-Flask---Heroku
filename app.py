@@ -6,6 +6,8 @@ import pickle
 import time
 import re
 
+nltk.download('stopwords')
+
 app = Flask(__name__)
 
 model = pickle.load(open("analizmodel", 'rb'))
