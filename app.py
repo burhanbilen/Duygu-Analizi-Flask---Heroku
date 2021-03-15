@@ -81,17 +81,13 @@ def get_data():
             sonuc = "Bir bağlantı yazın."
             return render_template("index.html", sonuc = sonuc, miktar = "")
         else:
-            try:
-                gorusler = veri(url)
-                tokenized = tokenizer.transform(gorusler)
-                tahmin = model.predict(tokenized)
-                y = [1 if i > 0.5 else 0 for i in tahmin]
-                oran = (int(y.count(1))/len(y))*100
-                sonuc = "Olumluluk: %{}".format("%.2f" % oran)
-                yorum_sayisi = "Yorum Sayısı: {}".format(str(len(gorusler)))
-            except:
-                sonuc = "Hata oluştu!"
-                yorum_sayisi = ""
+            gorusler = veri(url)
+            tokenized = tokenizer.transform(gorusler)
+            tahmin = model.predict(tokenized)
+            y = [1 if i > 0.5 else 0 for i in tahmin]
+            oran = (int(y.count(1))/len(y))*100
+            sonuc = "Olumluluk: %{}".format("%.2f" % oran)
+            yorum_sayisi = "Yorum Sayısı: {}".format(str(len(gorusler)))
 
     return render_template("index.html", sonuc = sonuc, miktar = yorum_sayisi)
 
